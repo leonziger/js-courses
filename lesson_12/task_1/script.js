@@ -49,12 +49,6 @@
 
   console.log('');
   console.log('5. Отсортировать li внутри списка в обратном порядке (по тексту внутри)');
-  //let liArray = document.querySelectorAll('li');
-  //console.log(liArray);
-  //for (i = 0; i < liArray.length; i++) {
-  //  console.log(liArray[i].textContent, liArray[i].innerHTML);
-  //}
-
   const aElements = document.querySelectorAll('a');
 
   let liArray = document.querySelectorAll('li');
