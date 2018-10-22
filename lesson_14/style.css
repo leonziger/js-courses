@@ -1,0 +1,7 @@
+option {
+    width: 200px;
+}
+
+input[type="text"] {
+    width: 500px;
+}
