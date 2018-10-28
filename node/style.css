@@ -20,3 +20,69 @@ ul li{
 .list{background: #0ff;}
 .green{background: green;}
 .custom-link{color: #f90;}
+
+::-webkit-input-placeholder{
+  font-size: 14px;
+  color: #737272;
+}
+::-moz-placeholder{
+  font-size: 14px;
+  color: #737272;
+}
+::-ms-input-placeholder{
+  font-size: 14px;
+  color: #737272;
+}
+:-moz-placeholder{
+  font-size: 14px;
+  color: #737272;
+}
+
+*:focus::-webkit-input-placeholder{
+  color:transparent;
+}
+*:focus::-moz-placeholder{
+  color:transparent;
+}
+*:focus::-ms-input-placeholder{
+  color:transparent;
+}
+*:focus:-moz-placeholder{
+  color:transparent;
+}
+
+
+option {
+  width: 200px;
+}
+
+input[type="text"] {
+  width: 500px;
+  padding: 5px 10px;
+  margin: 5px 10px;
+}
+
+#valid {
+  width: 550px;
+  margin-bottom: 100px;
+}
+
+input[type="submit"] {
+  float: right;
+  margin-right: 15px;
+  height: 30px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: red;
+}
+
+.before-submit {
+  padding-left: 35px;
+  color: red;
+}
+
+.error {
+  border: 1px solid red;
+}
