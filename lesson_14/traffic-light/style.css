@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.trafficLight {
+    min-width: 200px;
+    margin: 30px;
+}
+
+.trafficLight__lamps {
+    padding: 15px;
+    background: #333;
+}
+
+.trafficLight__actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3px;
+    background: #333;
+}
+
+.trafficLight__actionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.trafficLight__actionButton:hover {
+    color: #388e3c;
+}
+
+.trafficLight__lamp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 50%;
+    background: #bebebe;
+    font-size: 80px;
+}
+
+.trafficLight__lamp:before {
+    content: "";
+    display: block;
+    float: left;
+    padding-top: 100%;
+}
+
+.trafficLight__lamp + .trafficLight__lamp {
+    margin-top: 15px;
+}
+
+.trafficLight__lamp_forbidden {
+    color: #388e3c;
+}
+
+.trafficLight__lamp_forbidden.trafficLight__lamp_active {
+    background: #d32f2f;
+}
+
+.trafficLight__lamp_allowed {
+    color: #d32f2f;
+}
+
+.trafficLight__lamp_allowed.trafficLight__lamp_active {
+    background: #388e3c;
+}

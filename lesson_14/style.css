@@ -59,3 +59,30 @@ input[type="submit"]:hover {
     padding-left: 35px;
     color: red;
 }
+
+#wrapper {
+    height: 200px;
+    width: 1000px;
+    background-color: lightgray;
+    display: block;
+    margin-top: 50px;
+}
+
+#animator {
+    margin: 50px auto 0;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}
+
+input.input-text {
+    width: 100px;
+    height: 20px;
+}

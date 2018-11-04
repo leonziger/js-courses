@@ -97,7 +97,7 @@ console.log('Задачи на стр 9-11.');
     {'весна': 'одень ветровку и джинсы'}
   ];
 
-  const body = document.querySelector('body');
+  const body = document.querySelector('#seasons');
   const form = document.createElement('form');
   body.appendChild(form);
   form.setAttribute('id','form1');
@@ -117,7 +117,7 @@ console.log('Задачи на стр 9-11.');
       option.innerText = Object.keys(season)[0];
       select.appendChild(option);
 
-  })
+  });
 
     select.onchange = function(event) {
      const value = event.target.value;
@@ -128,3 +128,51 @@ console.log('Задачи на стр 9-11.');
     }
 
 }());
+
+
+(function() {
+  console.log('Анимация. Задачи на стр 8-9.');
+  console.log('1. Создать каркас для задачи: блок с шириной и высотой, закрашенный любым цветом. ' +
+      'Также должен быть текстовый инпут и кнопка.  ' +
+      'При нажатии на кнопку блок должен плавно передвигаться по горизонтали на столько пикселей, сколько указано в ипнуте. ' +
+      'Если ничего не указано, двигать блок до конца страницы. ' +
+      'Повторное нажатие на кнопку прерывает текущую анимацию, возвращает блок на место и запускает новую анимацию. ' +
+      'Используйте таймеры.');
+
+  const form = document.querySelector('#animator');
+  let interval, widthofAnimation, marginLeft;
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const wrapper = document.querySelector('#wrapper');
+    const square = document.querySelector('.square');
+    const widthOfWrapper = wrapper.offsetWidth;
+    const widthOfSquare = square.offsetWidth;
+    const input = form.querySelector('.input-text').value;
+    if(input > 0 && input < widthOfWrapper) {
+      widthofAnimation = input;
+    } else {
+      widthofAnimation = widthOfWrapper - widthOfSquare;
+    }
+
+    square.style.marginLeft = '';
+
+
+    if (interval) {
+      clearInterval(interval);
+      marginLeft = 0;
+    }
+
+    interval = setInterval(function(){
+      marginLeft = parseInt(square.style.marginLeft || 0);
+
+      if (marginLeft < widthofAnimation) {
+        square.style.marginLeft = marginLeft + 5 + 'px';
+        console.log(marginLeft, square.style.marginLeft);
+      } else {
+        clearInterval(interval);
+      }
+    }, 20);
+
+  });
+}());
+
