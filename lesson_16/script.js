@@ -8,23 +8,30 @@
     let users = [];
 
     function getUsers(){
+        http({
+            method: 'GET',
+            url: 'users.json'
+        }).then(function(response) {
+            users = response.data;
+            renderUsers(users);
+        });
 
-        const xhr = new XMLHttpRequest();
+        //const xhr = new XMLHttpRequest();
+        //
+        //xhr.open('GET', 'users.json', true);
+        //xhr.send();
+        //
+        //xhr.onreadystatechange = function() {
+        //    if (xhr.readyState != 4) return;
+        //
+        //    if (xhr.status != 200) {
+        //        alert(xhr.status + ': ' + xhr.statusText);
+        //    } else {
+        //        users = JSON.parse(xhr.responseText);
 
-        xhr.open('GET', 'users.json', true);
-        xhr.send();
-
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState != 4) return;
-
-            if (xhr.status != 200) {
-                alert(xhr.status + ': ' + xhr.statusText);
-            } else {
-                users = JSON.parse(xhr.responseText);
-                renderUsers(users);
-
-            }
-        }
+        //
+        //    }
+        //}
 
     }
 
